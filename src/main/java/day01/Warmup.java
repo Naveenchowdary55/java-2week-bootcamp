@@ -22,7 +22,7 @@ public class Warmup {
      * @return the greeting sentence
      */
     public static String greeting(String name) {
-        throw new UnsupportedOperationException("TODO: implement me");
+       return "Hello, " + name + "! Welcome to Java.";
     }
 
     /**
@@ -38,6 +38,6 @@ public class Warmup {
      * @return a String of {@code count} asterisks
      */
     public static String starLine(int count) {
-        throw new UnsupportedOperationException("TODO: implement me");
+    return "*".repeat(count);
     }
 }
