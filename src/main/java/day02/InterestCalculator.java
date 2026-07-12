@@ -22,7 +22,7 @@ public class InterestCalculator {
      * @return the interest earned
      */
     public static double simpleInterest(double principal, double ratePercent, double years) {
-        throw new UnsupportedOperationException("TODO: implement me");
+         return (principal * ratePercent * years) / 100; 
     }
 
     /**
@@ -38,6 +38,6 @@ public class InterestCalculator {
      * @return principal plus the interest earned
      */
     public static double totalAmount(double principal, double ratePercent, double years) {
-        throw new UnsupportedOperationException("TODO: implement me");
+       return principal + simpleInterest(principal, ratePercent, years);
     }
 }
