@@ -20,7 +20,7 @@ public class TemperatureConverter {
      * @return temperature in Fahrenheit
      */
     public static double celsiusToFahrenheit(double c) {
-        throw new UnsupportedOperationException("TODO: implement me");
+       return c * 9 / 5 + 32;
     }
 
     /**
@@ -35,6 +35,6 @@ public class TemperatureConverter {
      * @return temperature in Celsius
      */
     public static double fahrenheitToCelsius(double f) {
-        throw new UnsupportedOperationException("TODO: implement me");
+       return (f - 32) * 5 / 9;
     }
 }
