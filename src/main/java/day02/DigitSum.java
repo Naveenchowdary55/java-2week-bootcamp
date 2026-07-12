@@ -26,6 +26,6 @@ public class DigitSum {
      * @return the sum of its four digits
      */
     public static int sumOfDigits4(int n) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return (n / 1000) + (n / 100 % 10) + (n / 10 % 10) + (n % 10);
     }
 }
