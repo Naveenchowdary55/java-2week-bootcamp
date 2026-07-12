@@ -1,0 +1,16 @@
+# Build output
+target/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS files
+.DS_Store
+
+# Mentor-only solution staging (distributed via the private solutions branch instead)
+solutions-staging/
