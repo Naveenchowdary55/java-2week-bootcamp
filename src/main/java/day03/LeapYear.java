@@ -26,6 +26,6 @@ public class LeapYear {
      * @return true if it is a leap year
      */
     public static boolean isLeap(int year) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 }
