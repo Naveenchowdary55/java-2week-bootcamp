@@ -29,7 +29,19 @@ public class GradeAssigner {
      * @return the grade letter
      */
     public static char gradeIfElse(int marks) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (marks < 0 || marks > 100) {
+            throw new IllegalArgumentException("Marks must be between 0 and 100");
+        } else if (marks >= 90) {
+            return 'A';
+        } else if (marks >= 75) {
+            return 'B';
+        } else if (marks >= 60) {
+            return 'C';
+        } else if (marks >= 40) {
+            return 'D';
+        } else {
+            return 'F';
+        }
     }
 
     /**
