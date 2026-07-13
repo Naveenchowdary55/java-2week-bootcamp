@@ -27,6 +27,12 @@ public class BillSplitter {
      * @return each person's share
      */
     public static double perPersonShare(double total, int people) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (people <= 0) {
+            throw new IllegalArgumentException("Number of people must be positive");
+        }
+        if (total < 0) {
+            throw new IllegalArgumentException("Total must be a non-negative number");
+        }
+        return (total > 2000 ? total * 1.1 : total) / people;
     }
 }
