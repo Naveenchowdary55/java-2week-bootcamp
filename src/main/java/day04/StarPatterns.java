@@ -25,8 +25,23 @@ public class StarPatterns {
      * @return the triangle as one String
      */
     public static String rightTriangle(int rows) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        
+        StringBuilder triangle = new StringBuilder();
+
+        for (int i = 1; i <= rows; i++) {
+
+            for (int j = 1; j <= i; j++) {
+                triangle.append("*");
+            }
+
+            if (i != rows) {
+                triangle.append("\n");
+            }
+        }
+
+        return triangle.toString();
     }
+
 
     /**
      * A centred pyramid. Row i (1-based) has (rows - i) leading spaces, then
@@ -47,7 +62,24 @@ public class StarPatterns {
      * @return the pyramid as one String
      */
     public static String pyramid(int rows) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        StringBuilder pyramid = new StringBuilder();
+
+        for (int i = 1; i <= rows; i++) {
+            // Print leading spaces
+            for (int j = 1; j <= rows - i; j++) {
+                pyramid.append(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                pyramid.append("*");
+            }
+            // Add newline (except for the last row)
+            if (i != rows) {
+                pyramid.append("\n");
+            }
+        }
+
+        return pyramid.toString();
     }
 
     /**
@@ -74,6 +106,14 @@ public class StarPatterns {
      * @return the diamond as one String
      */
     public static String diamond(int rows) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        String pyramid = pyramid(rows);
+        String[] lines = pyramid.split("\n");
+        StringBuilder diamond = new StringBuilder(pyramid);
+
+        for (int i = lines.length - 2; i >= 0; i--) {
+            diamond.append("\n").append(lines[i]);
+        }
+
+        return diamond.toString();
     }
 }
