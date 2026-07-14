@@ -21,7 +21,11 @@ public class LoopBasics {
      * @return the sum of even numbers in 2..n, or 0 if n < 2
      */
     public static int sumOfEvens(int n) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int sum = 0;
+        for (int i = 2; i <= n; i += 2) {
+            sum += i;
+        }
+        return sum;
     }
 
     /**
@@ -49,6 +53,13 @@ public class LoopBasics {
      * @return the 10-line table as a single String
      */
     public static String multiplicationTable(int n) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        StringBuilder table = new StringBuilder();
+        for (int i = 1; i <= 10; i++) {
+            if (i > 1) {
+                table.append("\n");
+            }
+            table.append(n).append(" x ").append(i).append(" = ").append(n * i);
+        }
+        return table.toString();
     }
 }
