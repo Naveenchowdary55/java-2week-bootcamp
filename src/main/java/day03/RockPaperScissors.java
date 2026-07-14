@@ -34,7 +34,23 @@ public class RockPaperScissors {
      * @return "PLAYER 1", "PLAYER 2", or "DRAW"
      */
     public static String winner(String p1, String p2) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        p1 = p1.toLowerCase();
+        p2 = p2.toLowerCase();
+
+
+        if (!isValidMove(p1) || !isValidMove(p2)) {
+            throw new IllegalArgumentException("Invalid move: " + p1 + " or " + p2);
+        }
+
+        if (p1.equals(p2)) {
+            return "DRAW";
+        } else if ((p1.equals("rock") && p2.equals("scissors")) ||
+                   (p1.equals("scissors") && p2.equals("paper")) ||
+                   (p1.equals("paper") && p2.equals("rock"))) {
+            return "PLAYER 1";
+        } else {
+            return "PLAYER 2";
+        }
     }
 
     /**
@@ -55,10 +71,15 @@ public class RockPaperScissors {
     }
 
     public static void main(String[] args) {
-        // TODO (interactive, not tested): build a game against the computer.
-        //   1. Create a Scanner to read the player's move from the keyboard.
-        //   2. Call randomMove() for the computer's move.
-        //   3. Print both moves, then print winner(playerMove, computerMove).
-        //   4. Bonus: loop for 3 rounds and keep score.
+        // play a game against the computer
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        System.out.print("Enter your move (rock, paper, scissors): ");
+        String playerMove = scanner.nextLine();
+        String computerMove = randomMove();
+        System.out.println("Computer chose: " + computerMove);
+        String result = winner(playerMove, computerMove);
+        System.out.println("Result: " + result);
+
+       
     }
 }
