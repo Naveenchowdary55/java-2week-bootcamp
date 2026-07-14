@@ -27,14 +27,36 @@ public class GuessingGame {
      * @return "HIGHER", "LOWER", or "CORRECT"
      */
     public static String hint(int secret, int guess) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (secret > guess) {
+            return "one";
+        } else if (secret < guess) {
+            return "two";
+        } else {
+            return "CORRECT";
+        }
     }
 
-    public static void main(String[] args) {
-        // TODO (interactive, not tested): build the full guessing game.
-        //   1. Pick a secret: int secret = 1 + (int) (Math.random() * 100);  // 1..100
-        //   2. Create a Scanner to read the player's guesses.
-        //   3. Loop: read a guess, print hint(secret, guess), count attempts.
-        //   4. Stop when hint(...) is "CORRECT", then print how many attempts it took.
+    public static void main(String[] args) 
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        int secret = (int) (Math.random() * 100) + 1; // random number between 1 and 100
+        System.out.println("Welcome to the Guessing Game!");
+        System.out.println("I'm thinking of a number between 1 and 100.");
+        System.out.println("Try to guess it!");
+
+        while (true) {
+            System.out.print("Enter your guess: ");
+            int guess = scanner.nextInt();
+            String result = hint(secret, guess);
+            System.out.println(result);
+            if (result.equals("CORRECT")) {
+                System.out.println("Congratulations! You've guessed the number!");
+                break;
+            }
+        }
+
+        scanner.close();
+
+       
+
     }
 }
