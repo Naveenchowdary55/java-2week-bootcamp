@@ -22,7 +22,16 @@ public class NumberOps {
      * @return the number with its digits reversed
      */
     public static int reverseDigits(int n) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int reversed = 0;
+        while (n > 0) {
+            int digit = n % 10; // Get the last digit
+            reversed = reversed * 10 + digit; // Append it to the reversed number
+            n /= 10; // Remove the last digit from n
+        }
+        return reversed;
+          
+        
+
     }
 
     /**
@@ -41,7 +50,7 @@ public class NumberOps {
      * @return true if n is prime
      */
     public static boolean isPrime(int n) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return n > 1 && java.util.stream.IntStream.rangeClosed(2, (int) Math.sqrt(n)).noneMatch(i -> n % i == 0);
     }
 
     /**
@@ -57,7 +66,20 @@ public class NumberOps {
      * @return an array of the primes <= n, or an empty array if none
      */
     public static int[] primesUpTo(int n) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int count = 0;
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
+                count++;
+            }
+        }
+        int[] primes = new int[count];
+        int index = 0;
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
+                primes[index++] = i;
+            }
+        }
+        return primes;
     }
 
     /**
@@ -75,6 +97,17 @@ public class NumberOps {
      * @return a long[] of the first {@code terms} Fibonacci numbers
      */
     public static long[] fibonacci(int terms) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (terms <= 0) {
+            return new long[0];
+        }
+        long[] fib = new long[terms];
+        fib[0] = 0;
+        if (terms > 1) {
+            fib[1] = 1;
+            for (int i = 2; i < terms; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+        }
+        return fib;
     }
 }
