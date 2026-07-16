@@ -26,6 +26,18 @@ public class ArrayOps {
      * @param arr the array to reverse (never null)
      */
     public static void reverseInPlace(int[] arr) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+
+
+        
+       
     }
 }
