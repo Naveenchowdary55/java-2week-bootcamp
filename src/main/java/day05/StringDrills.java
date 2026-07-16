@@ -24,7 +24,15 @@ public class StringDrills {
      * @return how many vowels appear
      */
     public static int countVowels(String s) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = Character.toLowerCase(s.charAt(i));
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                count++;
+            }
+        }
+        return count;
+    
     }
 
     /**
@@ -41,7 +49,14 @@ public class StringDrills {
      * @return how many consonants appear
      */
     public static int countConsonants(String s) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = Character.toLowerCase(s.charAt(i));
+            if (Character.isLetter(c) && !(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -56,7 +71,14 @@ public class StringDrills {
      * @return how many digit characters appear
      */
     public static int countDigits(String s) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (Character.isDigit(c)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -71,7 +93,14 @@ public class StringDrills {
      * @return how many ' ' characters appear
      */
     public static int countSpaces(String s) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == ' ') {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -91,7 +120,18 @@ public class StringDrills {
      * @return true if it reads the same both ways (ignoring case)
      */
     public static boolean isPalindrome(String s) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+            char leftChar = Character.toLowerCase(s.charAt(left));
+            char rightChar = Character.toLowerCase(s.charAt(right));
+            if (leftChar != rightChar) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 
     /**
@@ -110,6 +150,12 @@ public class StringDrills {
      * @return how many times target appears exactly
      */
     public static int frequencyOf(String s, char target) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == target) {
+                count++;
+            }
+        }
+        return count;
     }
 }
