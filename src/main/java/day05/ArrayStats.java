@@ -24,7 +24,11 @@ public class ArrayStats {
      * @return the sum of all elements
      */
     public static int sum(int[] arr) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        int total = 0;
+        for (int i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+        return total;
     }
 
     /**
@@ -43,7 +47,11 @@ public class ArrayStats {
      * @throws IllegalArgumentException if the array is empty
      */
     public static double average(int[] arr) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+        int total = sum(arr);
+        return (double) total / arr.length;
     }
 
     /**
@@ -61,7 +69,16 @@ public class ArrayStats {
      * @throws IllegalArgumentException if the array is empty
      */
     public static int max(int[] arr) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+        int largest = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+        return largest;
     }
 
     /**
@@ -78,7 +95,16 @@ public class ArrayStats {
      * @throws IllegalArgumentException if the array is empty
      */
     public static int min(int[] arr) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+        int smallest = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+        return smallest;
     }
 
     /**
@@ -103,6 +129,22 @@ public class ArrayStats {
      * @throws IllegalArgumentException if there is no second distinct value
      */
     public static int secondLargest(int[] arr) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (arr.length < 2) {
+            throw new IllegalArgumentException("Array must have at least two distinct elements");
+        }
+        int largest = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        for (int num : arr) {
+            if (num > largest) {
+                second = largest;
+                largest = num;
+            } else if (num > second && num < largest) {
+                second = num;
+            }
+        }
+        if (second == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("No second distinct value found");
+        }
+        return second;
     }
 }

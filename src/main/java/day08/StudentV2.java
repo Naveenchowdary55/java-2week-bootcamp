@@ -32,7 +32,37 @@ public class StudentV2 {
      * @param rollNo the student's roll number
      */
     public StudentV2(String name, int rollNo) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        this(name, rollNo, new int[0]);
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+        if (rollNo <= 0) {
+            throw new IllegalArgumentException("Roll number must be a positive integer");
+        }
+    }
+        
+    
+
+
+        
+    
+    public static void main(String[] args) {
+     
+        StudentV2 a = new StudentV2("Asha", 12);              // no marks yet
+        StudentV2 b = new StudentV2("Ben", 13, new int[]{80, 90});
+        System.out.println(a.average());  // 0.0
+        System.out.println(b.average());  // 85.0
+        if (a.average() == 0.0 && b.average() == 85.0) {
+            System.out.println("Test passed");
+        } else {
+            System.out.println("Test failed");
+        }
+     
+
+
+        
+
+
     }
 
     /**
@@ -43,27 +73,42 @@ public class StudentV2 {
      * @param marks  the student's marks (may be empty)
      */
     public StudentV2(String name, int rollNo, int[] marks) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
     }
 
     /**
      * @return the student's name
      */
     public String getName() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (name == null) {
+            throw new IllegalStateException("Name has not been set");
+        }
+        return name;
     }
 
     /**
      * @return the student's roll number
      */
     public int getRollNo() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (rollNo == 0) {
+            throw new IllegalStateException("Roll number has not been set");
+        }
+        return rollNo;
     }
 
     /**
      * @return the average of the marks, or 0.0 when there are no marks.
      */
     public double average() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (marks.length == 0) {
+            return 0.0;
+        }
+        int sum = 0;
+        for (int mark : marks) {
+            sum += mark;
+        }
+        return (double) sum / marks.length;
     }
 }

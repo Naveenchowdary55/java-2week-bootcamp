@@ -16,25 +16,25 @@ package day05;
 public class BuilderLab {
 
     public static void main(String[] args) {
-        // TODO 1: Concatenate with + in a loop.
-        //   - Make a String variable, e.g. String slow = "";
-        //   - Record the start time: long start = System.currentTimeMillis();
-        //   - Loop 10,000 times and do slow = slow + "x"; each pass.
-        //   - Record the end time and print (end - start) as "plus loop took ... ms".
+        int n = 10_000;
+        long startTime, endTime;
 
-        // TODO 2: Do the same work with a StringBuilder.
-        //   - StringBuilder fast = new StringBuilder();
-        //   - Time a loop of 10,000 that calls fast.append("x");
-        //   - Turn it into a String at the end with fast.toString().
-        //   - Print how many milliseconds that took.
+        // Timing String concatenation
+        startTime = System.nanoTime();
+        String s = "";
+        for (int i = 0; i < n; i++) {
+            s = s + "x";
+        }
+        endTime = System.nanoTime();
+        System.out.println("String concatenation time: " + (endTime - startTime) / 1_000_000 + " ms");
 
-        // TODO 3: Print both lengths to prove they built the same size of text.
-        //   (Both should be 10000 characters long.)
-
-        // TODO 4: In your log, write down the two timings and one sentence
-        //   explaining WHY the + loop is slower. Try bumping 10,000 up to
-        //   100,000 and watch the gap grow.
-
-        System.out.println("Fill in the TODOs above, then read your timings.");
+        // Timing StringBuilder
+        startTime = System.nanoTime();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            sb.append("x");
+        }
+        endTime = System.nanoTime();
+        System.out.println("StringBuilder time: " + (endTime - startTime) / 1_000_000 + " ms");
     }
 }
