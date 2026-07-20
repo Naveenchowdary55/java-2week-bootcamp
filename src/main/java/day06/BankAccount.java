@@ -12,6 +12,9 @@ package day06;
  */
 public class BankAccount {
 
+    private String owner;
+    private double balance;
+
     /**
      * Open an account for an owner with a starting balance. Store both in your
      * own fields.
@@ -20,7 +23,14 @@ public class BankAccount {
      * @param openingBalance the starting balance
      */
     public BankAccount(String owner, double openingBalance) {
-        throw new UnsupportedOperationException("TODO: implement me");
+         this.owner = owner;
+        this.balance = openingBalance;
+
+
+
+         
+
+            
     }
 
     /**
@@ -36,7 +46,12 @@ public class BankAccount {
      * @return true if the deposit happened, false if it was rejected
      */
     public boolean deposit(double amount) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (amount <= 0) {
+            return false;
+        }
+        balance += amount;
+        return true;
+        
     }
 
     /**
@@ -54,20 +69,24 @@ public class BankAccount {
      * @return true if the withdrawal happened, false if it was rejected
      */
     public boolean withdraw(double amount) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (amount <= 0 || amount > balance) {
+            return false;
+        }
+        balance -= amount;
+        return true;
     }
 
     /**
      * @return the current balance
      */
     public double getBalance() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return balance;
     }
 
     /**
      * @return the owner's name
      */
     public String getOwner() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return owner;
     }
 }

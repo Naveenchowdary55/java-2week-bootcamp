@@ -1,4 +1,4 @@
-public class GuessingGame {
+public class Naveen.GuessingGame {
 
     public static String hint(int secret, int guess) {
 

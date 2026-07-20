@@ -30,6 +30,18 @@ public class ElectricityBill {
      * @return the total bill
      */
     public static double amount(int units) {
-        throw new UnsupportedOperationException("TODO: implement me");
+         if (units < 0) {
+             throw new IllegalArgumentException("Units must be non-negative");
+         }
+         if (units <= 100) {
+             return units * 3;
+         }
+         if (units <= 200) {
+             return 100 * 3 + (units - 100) * 5;
+         }
+         if (units <= 500) {
+             return 100 * 3 + 100 * 5 + (units - 200) * 8;
+         }
+         return 100 * 3 + 100 * 5 + 300 * 8 + (units - 500) * 10;
     }
 }
