@@ -32,6 +32,20 @@ public class MatrixMath {
      * @throws IllegalArgumentException if the dimensions do not match
      */
     public static int[][] add(int[][] a, int[][] b) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (a.length != b.length || a[0].length != b[0].length) {
+            throw new IllegalArgumentException("Matrices must have the same dimensions");
+        }
+
+        int rows = a.length;
+        int cols = a[0].length;
+        int[][] result = new int[rows][cols];
+
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                result[r][c] = a[r][c] + b[r][c];
+            }
+        }
+
+        return result;
     }
 }
