@@ -41,6 +41,6 @@ Write a few sentences in your learning log:
 - What surprised you when you compiled from the command line?
 
 ## Definition of done
-- `./mvnw test -Dtest="day01.*"` is all green
+- `./mvnw test -Dtest="day01.*Test"` is all green
 - Warm-ups done (you compiled and ran Hello from the terminal)
 - Learning log updated

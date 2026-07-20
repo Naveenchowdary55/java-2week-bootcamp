@@ -35,6 +35,6 @@ Open `CastingLab.java` and work through its TODOs. **Predict every answer before
 - What actually happened when you overflowed an `int`? Why?
 
 ## Definition of done
-- `./mvnw test -Dtest="day02.*"` is all green
+- `./mvnw test -Dtest="day02.*Test"` is all green
 - `CastingLab` warm-ups done, with predictions written down
 - Learning log updated

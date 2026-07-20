@@ -34,6 +34,6 @@ Make programs that decide. You will use `if`/`else`, the ternary operator, and `
 - What goes wrong if you compare two Strings with `==` instead of `.equals(...)`?
 
 ## Definition of done
-- `./mvnw test -Dtest="day03.*"` is all green
+- `./mvnw test -Dtest="day03.*Test"` is all green
 - Warm-ups done (you built at least one interactive `Scanner` program)
 - Learning log updated

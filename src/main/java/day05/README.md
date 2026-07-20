@@ -55,6 +55,6 @@ Predict the outcome *before* you run each one.
   time you compare Strings?
 
 ## Definition of done
-- `./mvnw test -Dtest="day05.*"` is all green.
+- `./mvnw test -Dtest="day05.*Test"` is all green.
 - `BuilderLab` warm-up done and both timings recorded.
 - Log updated with today's prompts.

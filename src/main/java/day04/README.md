@@ -35,6 +35,6 @@ Watch the newline rule: patterns and the multiplication table join rows with `\n
 - Describe an off-by-one bug you hit today and how you found it.
 
 ## Definition of done
-- `./mvnw test -Dtest="day04.*"` is all green
+- `./mvnw test -Dtest="day04.*Test"` is all green
 - Warm-ups done (countdown three ways + interactive table)
 - Learning log updated

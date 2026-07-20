@@ -58,6 +58,6 @@ Predict first, then run.
   prevented it?
 
 ## Definition of done
-- `./mvnw test -Dtest="day06.*"` is all green.
+- `./mvnw test -Dtest="day06.*Test"` is all green.
 - Both warm-ups done (refactor + stack/heap photo in the log).
 - Log updated with today's prompts.

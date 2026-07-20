@@ -62,5 +62,5 @@ that `withdraw` has `throws InsufficientBalanceException` in its signature and
 - Where does `finally` run that a normal line after the `try` would not?
 
 ## Definition of done
-`./mvnw test -Dtest="day11.*"` all green, both warm-up TODO sets explored (with
+`./mvnw test -Dtest="day11.*Test"` all green, both warm-up TODO sets explored (with
 line numbers written down), and `LOG.md` updated.

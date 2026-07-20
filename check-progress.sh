@@ -15,10 +15,10 @@ if [ ! -d "$REPORTS" ]; then
 fi
 
 echo
-printf "%-6s %8s %8s   %s\n" "Day" "Passed" "Total" "Status"
-printf "%-6s %8s %8s   %s\n" "-----" "------" "-----" "------"
+printf "%-10s %8s %8s   %s\n" "Day" "Passed" "Total" "Status"
+printf "%-10s %8s %8s   %s\n" "---------" "------" "-----" "------"
 
-for day in $(ls "$REPORTS" | grep -oE '^day[0-9]+' | sort -u); do
+for day in $(ls "$REPORTS" | grep -oE '^(day[0-9]+|week[0-9]+test)' | sort -u); do
   passed=0
   total=0
   for f in "$REPORTS"/${day}.*.txt; do
@@ -40,7 +40,7 @@ for day in $(ls "$REPORTS" | grep -oE '^day[0-9]+' | sort -u); do
   else
     status="🔶 in progress"
   fi
-  printf "%-6s %8s %8s   %s\n" "$day" "$passed" "$total" "$status"
+  printf "%-10s %8s %8s   %s\n" "$day" "$passed" "$total" "$status"
 done
 
 echo

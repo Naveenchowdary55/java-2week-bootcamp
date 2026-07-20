@@ -55,7 +55,7 @@ one command (see below). We'll demystify the tooling in Phase 2.
    recognize the Maven project automatically.
 5. **Smoke test.** From the repo root:
    ```bash
-   ./mvnw test -Dtest="day01.*"
+   ./mvnw test -Dtest="day01.*Test"
    ```
    The first run downloads dependencies (needs internet, takes a few minutes).
    You should see test FAILURES — that's correct! The stubs aren't implemented
@@ -74,7 +74,7 @@ one command (see below). We'll demystify the tooling in Phase 2.
 1. Open `src/main/java/dayNN/README.md` and follow it top to bottom.
 2. Implement the stubs. Run the day's tests as often as you like:
    ```bash
-   ./mvnw test -Dtest="day03.*"        # just today's tests
+   ./mvnw test -Dtest="day03.*Test"        # just today's tests
    ./mvnw test                          # everything so far
    ```
 3. A test failure tells you what was expected vs. what your code returned.
