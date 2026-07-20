@@ -37,4 +37,4 @@ Then try to instantiate the abstract `Shape` directly: `Shape s = new Shape();`.
 - Where have you already seen the "code against an interface, plug in an implementation" idea? Where might Spring use it?
 
 ## Definition of done
-`./mvnw test -Dtest="day10.*"` is all green, both warm-ups are done (abstract-vs-interface note + pasted `new Shape()` error), and your log is updated.
+`./mvnw test -Dtest="day10.*Test"` is all green, both warm-ups are done (abstract-vs-interface note + pasted `new Shape()` error), and your log is updated.

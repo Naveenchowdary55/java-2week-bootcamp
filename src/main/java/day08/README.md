@@ -35,4 +35,4 @@ Then answer this in your log: **why can't a `static` method access a non-static 
 - Where else in real code would an auto-incrementing static id be useful?
 
 ## Definition of done
-`./mvnw test -Dtest="day08.*"` is all green, both warm-ups are done (including the pasted compile error), and your log is updated.
+`./mvnw test -Dtest="day08.*Test"` is all green, both warm-ups are done (including the pasted compile error), and your log is updated.

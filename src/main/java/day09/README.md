@@ -42,4 +42,4 @@ Next, try calling a `Car`-only method (add one, e.g. `openSunroof()`) through th
 - Why does `super(...)` have to be the first line of a subclass constructor?
 
 ## Definition of done
-`./mvnw test -Dtest="day09.*"` is all green, both warm-ups are done (predictions + pasted compile error), and your log is updated.
+`./mvnw test -Dtest="day09.*Test"` is all green, both warm-ups are done (predictions + pasted compile error), and your log is updated.

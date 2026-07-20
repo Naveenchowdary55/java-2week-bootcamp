@@ -58,5 +58,5 @@ list you passed it is a classic source of bugs.
   what would you change to sort ascending?
 
 ## Definition of done
-`./mvnw test -Dtest="day12.*"` all green, the Day 7 array → `ArrayList` warm-up
+`./mvnw test -Dtest="day12.*Test"` all green, the Day 7 array → `ArrayList` warm-up
 done, and `LOG.md` updated with the lookup-cost note.

@@ -58,6 +58,6 @@ stop looking like magic.
   rather have a named method?
 
 ## Definition of done
-`./mvnw test -Dtest="day13.*"` all green, the `ThreadLab` race reproduced with
+`./mvnw test -Dtest="day13.*Test"` all green, the `ThreadLab` race reproduced with
 your own eyes (prediction written down first), the plain-loop comments added to
 `StreamDrills`, and `LOG.md` updated.

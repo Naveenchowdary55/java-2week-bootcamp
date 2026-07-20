@@ -88,8 +88,8 @@ what the button hides.
 
 **From the terminal** (VS Code menu: Terminal → New Terminal):
 ```bash
-./mvnw test -Dtest="day01.*"        # Mac/Linux
-mvnw.cmd test -Dtest="day01.*"      # Windows
+./mvnw test -Dtest="day01.*Test"        # Mac/Linux
+mvnw.cmd test -Dtest="day01.*Test"      # Windows
 ```
 The first run downloads dependencies for a few minutes. Expect **FAILURES** —
 the exercises aren't implemented yet. Failing is the correct starting state;
