@@ -25,21 +25,23 @@ public class Student {
      * @param marks  their marks (may be null or empty for a student with no marks)
      */
     public Student(String name, int rollNo, int[] marks) {
-        throw new UnsupportedOperationException("TODO: implement me");
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
     }
 
     /**
      * @return the name you stored in the constructor
      */
     public String getName() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return this.name;
     }
 
     /**
      * @return the roll number you stored in the constructor
      */
     public int getRollNo() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        return this.rollNo;
     }
 
     /**
@@ -52,7 +54,15 @@ public class Student {
      * @return the mean of the marks, or 0.0 when there are none
      */
     public double average() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        if (this.marks == null || this.marks.length == 0) {
+            return 0.0;
+        }
+
+        int sum = 0;
+        for (int mark : this.marks) {
+            sum += mark;
+        }
+        return (double) sum / this.marks.length;
     }
 
     /**
@@ -71,6 +81,17 @@ public class Student {
      * @return the grade letter
      */
     public char grade() {
-        throw new UnsupportedOperationException("TODO: implement me");
+        double avg = average();
+        if (avg >= 90) {
+            return 'A';
+        } else if (avg >= 75) {
+            return 'B';
+        } else if (avg >= 60) {
+            return 'C';
+        } else if (avg >= 40) {
+            return 'D';
+        } else {
+            return 'F';
+        }
     }
 }
